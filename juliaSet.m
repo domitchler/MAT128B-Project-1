@@ -1,6 +1,19 @@
-phi = inline('z^2');   % Define the function whose fixed points we seek.
-fixpt1 = 0;     % These are the fixed points.
-fixpt2 = 1;
+phi_0 = @(z) z^2;
+juliaSet(phi_0)
+
+phi_1 = @(z) z^2-1.25;
+%juliaSet(phi_1)
+
+phi_2 = @(z) z^2+(0.36 + 0.1i);
+%juliaSet(phi_2)
+
+phi_3 = @(z) z^2+(-0.123 - 0.745i);
+%juliaSet(phi_3)
+
+function juliaSet(phi)
+c = phi(0);
+fixpt1 = (1 + sqrt(1-4*c))/2;     % These are the fixed points.
+fixpt2 = (1 - sqrt(1-4*c))/2;
 
 colormap([1 0 0; 1 1 1]);     % Points numbered 1 (inside) will be colored red;
                               %   those numbered 2 (outside) will be colored white.
@@ -40,3 +53,5 @@ end;
 
 image([-1.8 1.8],[-1.2 1.2],M),  % This plots the results.
 axis xy                        % If you don't do this, vertical axis is inverted.
+end
+
