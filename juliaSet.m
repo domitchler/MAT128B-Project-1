@@ -1,16 +1,4 @@
-% Examples of usage and syntax:
-
-%phi_0 = @(z) z^2;
-%juliaSet(phi_0)
-
-%phi_1 = @(z) z^2-1.25;
-%juliaSet(phi_1)
-
-%phi_2 = @(z) z^2+(0.36 + 0.1i);
-%juliaSet(phi_2)
-
-%phi_3 = @(z) z^2+(-0.123 - 0.745i);
-%juliaSet(phi_3)
+% Generates the Julia set associated with the function phi of the form phi(z) = z^2 + c.
 
 function juliaSet(phi)
 c = phi(0);
